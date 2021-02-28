@@ -1,25 +1,36 @@
-// color collection 
-const colors = ['#DAF7A6', '#566573', '#FF5733', '#2ecc71', '#3498db', '#8e44ad'];
-const button = document.querySelector('button');
-const body = document.querySelector('body');
-const header = document.querySelector('h1');
-var index = 0;
+const colorCode = [
+    "#333333",
+    "#4F4F4F",
+    "#828282",
+    "#BDBDBD",
+    "#E0E0E0",
+    "#F2F2F2",
+    "#EB5757",
+    "#F2994A",
+    "#F2C94C",
+    "#219653",
+    "#27AE60",
+    "#6FCF97",
+    "#2F80ED",
+    "#2D9CDB",
+    "#56CCF2",
+    "#9B51E0",
+    "#BB6BD9",
+];
 
-// body style 
-body.style.backgroundColor = '#121212';
+const detailsOne = document.querySelector(".details__one");
+const detailsTwo = document.querySelector(".details__two");
+const colorCodeText = document.querySelectorAll(".color__code");
+const colorContainer = document.querySelector(".color__container");
+const colorBox = document.querySelectorAll(".color__box");
 
-// header style 
-header.style.backgroundColor = '#060606';
-header.style.margin = 0;
-header.style.padding = '20px 30px';
-header.style.color= '#FFFFFF';
+colorBox.forEach((colors, i) => (colors.style.backgroundColor = colorCode[i]));
 
-
-button.addEventListener('click', changeBackground);
-
-function changeBackground(){
-    header.style.backgroundColor = colors[index]
-    body.style.backgroundColor = colors[index]
-    index += 1; 
-    index = (colors.length == index) ? 0 : index;
-}
+colorContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("color__box")) {
+        detailsTwo.style.backgroundColor = detailsOne.style.color = colorCodeText[1].innerHTML = colorCodeText[0].innerHTML =
+            colorCode[e.target.dataset.color - 1];
+        [...colorBox].map(colors=>colors.classList.remove("active"));
+        e.target.classList.add("active")
+    }
+});

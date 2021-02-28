@@ -1,33 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 body{
     padding: 0;
     margin: 0;
-}
-header{
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
-}
-.main-app{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #e2f8e9;
 }
-button{
-    outline: none;
-    border: none;
-    padding: 12px 32px;
-    font-size: 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    letter-spacing: 2px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                0 12.5px 10px rgba(0, 0, 0, 0.06),
-                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-                0 100px 80px rgba(0, 0, 0, 0.12);
+
+.color__collection{
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.color__collection--details{
+    height: 40vh;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.details__one, .details__two{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details__one{
+    color: #333333;
+    border-radius: 30px 30px 0 0;
+    background-color: #ffffff;
+}
+
+.details__two{
+    color: #ffffff;
+    border-radius: 0 0 30px 30px;
+    background-color: #333333;
+}
+
+.color__container{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    padding-top: 25px;
+}
+
+.color__box{
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    border-radius: 30px;
+    background-color: #E0E0E0;
+}
+
+.color__box:hover,
+.color__box:active{
+    border: 3px solid rgb(9, 154, 211);
+}
+
+.active{
+    border: 3px solid rgb(9, 154, 211);
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+@media only screen and (max-width: 425px){
+    .color__collection{
+        width: 100%;
+        height: 100%;
+    }    
+    .color__container{
+        padding-top: 15px;
+    }
 }
